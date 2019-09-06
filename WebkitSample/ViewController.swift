@@ -8,24 +8,25 @@
 
 import UIKit
 import WebKit
+import JavaScriptCore
 
-class ViewController: UIViewController, WKScriptMessageHandler {
+class ViewController: UIViewController {
     
     var webView: WKWebView!
     
     private func setupWebView() {
+        let config = WKWebViewConfiguration()
+        config.userContentController = WKUserContentController()
         
-        let contentController = WKUserContentController()
-        let userScript = WKUserScript(
-            source: "mobileHeader()",
+        let token = "this_tok"
+        
+        var userScript = WKUserScript(
+            source: "setIOSToken('\(token)')",
             injectionTime: WKUserScriptInjectionTime.atDocumentEnd,
             forMainFrameOnly: true
         )
-        contentController.addUserScript(userScript)
-        contentController.add(self, name: "loginAction")
-        
-        let config = WKWebViewConfiguration()
-        config.userContentController = contentController
+        config.userContentController.addUserScript(userScript)
+
         self.webView = WKWebView(frame: self.view.bounds, configuration: config)
     }
     
@@ -36,23 +37,15 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         self.setupWebView()
         self.view.addSubview(self.webView)
         
-        if let url = URL(string: "http://localhost:8888/web/webkitSample/index.html") { 
-            
+        if let url = Bundle.main.url(forResource: "index", withExtension:"html") {
             let request = URLRequest(url: url)
-            self.webView.load(request)
+            webView.load(request)
         }
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - WKScriptMessageHandler
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {       
-        if message.name == "loginAction" {
-            print("JavaScript is sending a message \(message.body)")
-        }
     }
 }

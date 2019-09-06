@@ -13,6 +13,8 @@
 		14B82EFC1FC36E0F009EFA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B82EFB1FC36E0F009EFA7C /* Assets.xcassets */; };
 		14B82EFF1FC36E0F009EFA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B82EFD1FC36E0F009EFA7C /* LaunchScreen.storyboard */; };
 		14B82F0A1FC36E0F009EFA7C /* WebkitSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B82F091FC36E0F009EFA7C /* WebkitSampleTests.swift */; };
+		1651935023212CA5003D4EDF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1651934F23212CA5003D4EDF /* index.html */; };
+		1651935223212CBC003D4EDF /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1651935123212CBC003D4EDF /* main.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		14B82F051FC36E0F009EFA7C /* WebkitSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebkitSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B82F091FC36E0F009EFA7C /* WebkitSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebkitSampleTests.swift; sourceTree = "<group>"; };
 		14B82F0B1FC36E0F009EFA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1651934F23212CA5003D4EDF /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = WebkitSample/index.html; sourceTree = "<group>"; };
+		1651935123212CBC003D4EDF /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		14B82EE81FC36E0F009EFA7C = {
 			isa = PBXGroup;
 			children = (
+				1651935123212CBC003D4EDF /* main.js */,
+				1651934F23212CA5003D4EDF /* index.html */,
 				14B82EF31FC36E0F009EFA7C /* WebkitSample */,
 				14B82F081FC36E0F009EFA7C /* WebkitSampleTests */,
 				14B82EF21FC36E0F009EFA7C /* Products */,
@@ -180,8 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B82EFF1FC36E0F009EFA7C /* LaunchScreen.storyboard in Resources */,
+				1651935023212CA5003D4EDF /* index.html in Resources */,
 				14B82EFC1FC36E0F009EFA7C /* Assets.xcassets in Resources */,
 				14B82EFA1FC36E0F009EFA7C /* Main.storyboard in Resources */,
+				1651935223212CBC003D4EDF /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
